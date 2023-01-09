@@ -14,7 +14,7 @@
     <h1 class="text-center mb-4">Data Pegawai</h1>
 
         <div class="container">
-            <button type="button" class="btn btn-success">Tambah +</button>
+            <a href="/tambahpegawai" type="button" class="btn btn-success">Tambah +</a>
             <div class="row">
                 <table class="table">
                     <thead>
