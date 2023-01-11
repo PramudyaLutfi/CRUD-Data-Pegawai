@@ -42,8 +42,8 @@
                                 <td>0{{$row->notelepon}}</td>
                                 <td>{{$row->created_at->format('D M Y')}}</td>
                                 <td>
-                                <button type="button" class="btn btn-danger">Delete</button> 
-                                <button type="button" class="btn btn-info">edit</button>
+                                    <button type="button" class="btn btn-danger">Delete</button> 
+                                    <a href="/tampilkandata/{{ $row->id }}" class="btn btn-info">edit</a>
                                 </td>
                             </tr>
                     @endforeach
