@@ -19,6 +19,6 @@ class EmployeeController extends Controller
     public function insertdata(Request $request){
         // dd(($request->all));
         Employee::create($request->all());
-        return redirect()->route('pegawai');
+        return redirect()->route('pegawai')->with('success','Data Berhasil Ditambahkan');
     }
 }
