@@ -16,7 +16,12 @@
 
         <div class="container">
             <a href="/tambahpegawai" type="button" class="btn btn-success">Tambah +</a>
-            <div class="row">
+            <form class="form-inline mt-2" action="/pegawai" method="GET">
+                <div class="form-group">
+                    <input type="search" id="inputPassword6" name="search" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                </div>
+            </form>
+            <div class="row mt-2">
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success" role="alert">
                         {{ $message }}
