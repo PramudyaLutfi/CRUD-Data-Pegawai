@@ -20,7 +20,13 @@
                 <div class="form-group">
                     <input type="search" id="inputPassword6" name="search" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
                 </div>
+                <div class="col-auto">
+                     <a href="/exportpdf" class="btn btn-info">Export PDF</a>
+                </div>
             </form>
+            <!-- <div class="col-auto">
+                <a href="#" class="btn btn-info">Export PDF</a>
+            </div> -->
             <div class="row mt-2">
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success" role="alert">
@@ -43,9 +49,9 @@
                     @php
                         $no = 1;
                     @endphp   
-                    @foreach ($data as $row)
+                    @foreach ($data as $index => $row)
                         <tr>
-                                <th scope="row">{{ $no++ }}</th>
+                                <th scope="row">{{ $index + $data->firstItem() }}</th>
                                 <td>{{$row->nama}}</td>
                                 <td>
                                     <img src="{{ asset('fotopegawai/'.$row->foto) }}" alt="" style="width: 40px;">
@@ -62,6 +68,7 @@
                        
                     </tbody>
                 </table>
+                {{ $data->links() }}
             </div>
         </div>
 
