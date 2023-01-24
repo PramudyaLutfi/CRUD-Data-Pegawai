@@ -23,6 +23,9 @@
                 <div class="col-auto">
                      <a href="/exportpdf" class="btn btn-info">Export PDF</a>
                 </div>
+                <div class="col-auto">
+                     <a href="/exportexcel" class="btn btn-success">Export Excel</a>
+                </div>
             </form>
             <!-- <div class="col-auto">
                 <a href="#" class="btn btn-info">Export PDF</a>
