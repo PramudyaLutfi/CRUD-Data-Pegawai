@@ -6,6 +6,7 @@ use PDF;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Exports\EmployeeExport;
+use App\Imports\EmployeeImport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeeController extends Controller
@@ -62,5 +63,15 @@ class EmployeeController extends Controller
 
     public function exportexcel(){
         return Excel::download(new EmployeeExport, 'datapegawai.xlsx');
+    }
+
+    public function importexcel(Request $request){
+        $data = $request->file('file');
+
+        $namafile = $data->getClientOriginalName();
+        $data->move('EmployeeData', $namafile);
+
+        Excel::import(new EmployeeImport, \public_path('/EmployeeData/'.$namafile));
+        return \redirect()->back();
     }
 }
