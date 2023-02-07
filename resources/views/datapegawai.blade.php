@@ -8,21 +8,22 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard v2</h1>
+            <!-- <h1 class="m-0 text-center">DATA PEGAWAI</h1> -->
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v2</li>
+              <li class="breadcrumb-item active">Data Pegawai</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-
+    <h1 class="text-center mb-5">DATA PEGAWAI</h1>
     <div class="container">
-            <a href="/tambahpegawai" type="button" class="btn btn-success">Tambah +</a>
+        <a href="/tambahpegawai" type="button" class="btn btn-success">Tambah +</a>
             <form class="form-inline mt-2" action="/pegawai" method="GET">
+            
                 <div class="form-group">
                     <input type="search" id="inputPassword6" name="search" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
                 </div>
@@ -113,7 +114,11 @@
     
 </div>
 
- <!-- Optional JavaScript -->
+ 
+@endsection
+
+@push('scripts')
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -146,4 +151,5 @@
     });
      
 </script>
-@endsection
+
+@endpush

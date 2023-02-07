@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\EmployeeController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,15 @@ use App\Http\Controllers\EmployeeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $jumlahpegawai = Employee::count();
+    $jumlahpegawaicowo = Employee::where('jeniskelamin','cowo')->count();
+    $jumlahpegawaicewe = Employee::where('jeniskelamin','cewe')->count();
+
+
+    return view('welcome',compact('jumlahpegawai','jumlahpegawaicowo','jumlahpegawaicewe'));
 });
 
-Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai');
+Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai')->middleware('auth');
 
 Route::get('/tambahpegawai',[EmployeeController::class, 'tambahpegawai'])->name('tambahpegawai');
 Route::post('/insertdata',[EmployeeController::class, 'insertdata'])->name('insertdata');
@@ -37,3 +43,15 @@ Route::get('/exportexcel',[EmployeeController::class, 'exportexcel'])->name('exp
 
 //import excel
 Route::post('/importexcel',[EmployeeController::class, 'importexcel'])->name('importexcel');
+
+Route::get('/login',[loginController::class, 'login'])->name('login');
+Route::post('/loginproses',[loginController::class, 'loginproses'])->name('loginproses');
+
+
+Route::get('/register',[loginController::class, 'register'])->name('register');
+Route::post('/registeruser',[loginController::class, 'registeruser'])->name('registeruser');
+
+Route::get('/logout',[loginController::class, 'logout'])->name('logout');
+
+
+
