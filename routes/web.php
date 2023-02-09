@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 
     return view('welcome',compact('jumlahpegawai','jumlahpegawaicowo','jumlahpegawaicewe'));
-});
+})->middleware('auth');
 
 Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai')->middleware('auth');
 
