@@ -22,6 +22,7 @@
     <h1 class="text-center mb-5">DATA PEGAWAI</h1>
     <div class="container">
         <a href="/tambahpegawai" type="button" class="btn btn-success">Tambah +</a>
+        <!-- {{ Session::get('halaman_url') }} -->
             <form class="form-inline mt-2" action="/pegawai" method="GET">
             
                 <div class="form-group">
